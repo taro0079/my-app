@@ -5,7 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "Taro Morita";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "3 Chiku App";
 
 type Props = {
   children: React.ReactNode;

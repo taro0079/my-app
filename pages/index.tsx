@@ -5,6 +5,9 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { useLayoutEffect } from "react";
+import Button from '@mui/material/Button'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
 import Date from "../components/date";
 
 export default function Home({
@@ -22,27 +25,40 @@ export default function Home({
 				<title>{siteTitle}</title>
 			</Head>
 			<section className={utilStyles.headingMd}>
-				<p>My name is Taro Morita</p>
 				<p>
-					Engineer of superconducting Nb3Sn wire{' '}
-					<a href="https://nextjs.org/learn">our Next.js tutorial</a>
+				test application
+
 				</p>
 			</section>
+			<section>
+				<h2>Apps</h2>
+				<Button variant="contained">Hello world</Button>
+
+
+
+			</section>
+
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
 				<h2 className={utilStyles.headingLg}>Blog</h2>
 				<ul className={utilStyles.list}>
 					{allPostsData.map(({ id, date, title }) => (
 						<li className={utilStyles.listItem} key={id}>
-							<Link href={`/posts/${id}`}>
-								<a>{title}</a>
-							</Link>
-							<br />
-							<small className={utilStyles.lightText}>
-								<Date dateString={date} />
-							</small>
+							<Card>
+								<CardContent>
+									<Link href={`/posts/${id}`}>
+										<a>{title}</a>
+									</Link>
+									<br />
+									<small className={utilStyles.lightText}>
+										<Date dateString={date} />
+									</small>
+
+								</CardContent>
+							</Card>
 						</li>
 					))}
 				</ul>
+
 			</section>
 		</Layout>
 
