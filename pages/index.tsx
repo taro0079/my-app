@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import { useLayoutEffect } from "react";
 import Date from "../components/date";
 
+// test comment
 export default function Home({
 	allPostsData
 }: {
