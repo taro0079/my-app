@@ -51,14 +51,14 @@ export async function getPostData(id: string) {
 	const matterResult = matter(fileContents)
 
 	const processedContent = await remark()
-	.use(html)
-	.process(matterResult.content)
+		.use(html)
+		.process(matterResult.content)
 
 	const contentHtml = processedContent.toString()
 
 	return {
 		id,
 		contentHtml,
-		...matterResult.data
+		...matterResult.data as { date: string; title: string }
 	}
 }
