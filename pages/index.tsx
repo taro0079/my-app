@@ -14,6 +14,7 @@ import { Box, VStack} from "@chakra-ui/react";
 import Menubar from "../components/header";
 import About from "./about";
 
+// test comment
 export default function Home({
   allPostsData,
 }: {
